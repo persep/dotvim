@@ -106,11 +106,10 @@
         color solarized             " Load a colorscheme
     endif
 
+    set visualbell                  "Use visual bell instead of beeping.
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
-
     set cursorline                  " Highlight current line
-
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
     "highlight clear CursorLineNr    " Remove highlight color from current line number
@@ -152,7 +151,6 @@
     set foldenable                  " Auto fold code
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-    set visualbell                  "Use visual bell instead of beeping.
 
 " }
 
