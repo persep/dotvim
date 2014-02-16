@@ -13,7 +13,9 @@
 
     " Basics {
         set nocompatible        " Must be first line
-        language messages en    " Set language and menus to english
+        if has('gui_running')
+            language messages en    " Set language and menus to english
+        endif
     " }
 
     " Windows Compatible {
