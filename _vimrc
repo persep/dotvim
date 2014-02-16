@@ -98,7 +98,7 @@
 
 " Vim UI {
     " If solarized is installed"
-    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim")) && has("gui_running")
         let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         let g:solarized_contrast="normal"
