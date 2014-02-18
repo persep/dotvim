@@ -150,9 +150,16 @@
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
     set foldenable                  " Auto fold code
-    if has('gui_running')
-        set list
-        set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    set list
+    if has('gui_running')           " Highlight problematic whitespace
+        " tab: > 1st character occupied by a tab, and - for rest
+        " trail: Character to show for trailing spaces.
+        " extends: Character to show in the last column, when 'wrap' is
+            off and the line continues 
+        " nbsp:c    Character to show for a non-breakable space
+        set listchars=tab:›\ ,trail:•,extends:#,nbsp:. 
+    else
+        set listchars=tab:>\ ,trail:·,extends:#,nbsp:. " Highlight problematic whitespace
     endif
     set vb                         "Use visual bell instead of beeping.
 
