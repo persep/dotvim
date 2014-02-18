@@ -82,7 +82,7 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility /\ and eol
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
-    set spell                           " Spell checking on
+    "set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
 
     " Setting up the directories {
@@ -154,8 +154,7 @@
     if has('gui_running')           " Highlight problematic whitespace
         " tab: > 1st character occupied by a tab, and - for rest
         " trail: Character to show for trailing spaces.
-        " extends: Character to show in the last column, when 'wrap' is
-            off and the line continues 
+        " extends: Character to show in the last column, when 'wrap' is off and the line continues 
         " nbsp:c    Character to show for a non-breakable space
         set listchars=tab:›\ ,trail:•,extends:#,nbsp:. 
     else
