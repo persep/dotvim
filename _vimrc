@@ -106,10 +106,11 @@
         color solarized             " Load a colorscheme
     endif
 
-    set visualbell                  "Use visual bell instead of beeping.
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
+
     set cursorline                  " Highlight current line
+
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
     "highlight clear CursorLineNr    " Remove highlight color from current line number
@@ -149,8 +150,11 @@
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
     set foldenable                  " Auto fold code
-    set list
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    if has('gui_running')
+        set list
+        set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    endif
+    set vb                         "Use visual bell instead of beeping.
 
 " }
 
