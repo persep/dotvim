@@ -160,7 +160,8 @@
     else
         set listchars=tab:>\ ,trail:·,extends:#,nbsp:. " Highlight problematic whitespace
     endif
-    set vb                         "Use visual bell instead of beeping.
+    set vb t_vb=                        "Use visual bell w no flash instead of beeping.
+    autocmd GUIEnter * set vb t_vb=     " Disable flash in gui mode. Execute command on event GUIEnter on ALL Files
 
 " }
 
