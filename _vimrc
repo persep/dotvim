@@ -120,7 +120,8 @@
 
     set cursorline                  " Highlight current line
     
-    if &term == 'xterm'
+    if &term == 'xterm'         " with 256 colors it will use solarized
+                                " and with cygwin underline is nicer
         hi CursorLine term=bold cterm=bold   " Avoid the underline highlight
     endif
 
