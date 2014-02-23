@@ -99,11 +99,8 @@
 " Vim UI {
     " If solarized is installed"
     if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim")) && has("gui_running")
-        let g:solarized_termcolors=256
-        let g:solarized_termtrans=1
-        let g:solarized_contrast="normal"
-        let g:solarized_visibility="normal"
         color solarized             " Load a colorscheme
+        call togglebg#map("")
     endif
 
     set tabpagemax=15               " Only show 15 tabs
