@@ -100,14 +100,14 @@
     " If solarized is installed"
     if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
         if has("gui_running")
-            call togglebg#map("")
+            call togglebg#map("")           " solarized in gui and xterm-256color
         elseif &term == 'xterm-256color'
                 let g:solarized_termcolors = 256
-            colo solarized             " Load solarized colorscheme
         endif 
+        colo solarized
     endif
     
-    if &term == 'cygwin'
+    if &term == 'cygwin'        " Other colorschemes 
         colo evening
     endif
     
