@@ -98,15 +98,31 @@
 
 " Vim UI {
     " If solarized is installed"
-    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim")) && has("gui_running")
-        color solarized             " Load a colorscheme
-        call togglebg#map("")
+    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+        if has("gui_running")
+            call togglebg#map("")
+        elseif &term == 'xterm-256color'
+                let g:solarized_termcolors = 256
+            colo solarized             " Load solarized colorscheme
+        endif 
+    endif
+    
+    if &term == 'cygwin'
+        colo evening
+    endif
+    
+    if &term == 'xterm'
+        colo slate
     endif
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
 
     set cursorline                  " Highlight current line
+    
+    if &term == 'xterm'
+        hi CursorLine term=bold cterm=bold   " Avoid the underline highlight
+    endif
 
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
@@ -488,14 +504,7 @@
             "Inconsolata font http://www.levien.com/type/myfonts/inconsolata.html
             set guifont=Inconsolata:h14,Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
         endif
-
-    else
-        if &term == 'xterm' || &term == 'screen'
-            set t_Co=256            " Enable 256 colors and make xterm vim shine
-        endif
-        "set term=builtin_ansi      " Make arrow and other keys work
     endif
-
 " }
 
 
